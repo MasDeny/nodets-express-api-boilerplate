@@ -1,0 +1,25 @@
+{
+    "entryFile": "src/server.ts",
+    "noImplicitAdditionalProperties": "silently-remove-extras",
+    "controllerPathGlobs": [
+      "src/**/*Controller.ts"
+    ],
+    "specMerging": "recursive",
+    "spec": {
+      "outputDirectory": "public",
+      "specVersion": 3,
+      "basePath": "api/v1",
+      "securityDefinitions": {
+        "jwt": {
+          "type": "apiKey",
+          "name": "x-access-token",
+          "in": "header"
+        }
+      }
+    },
+    "routes": {
+      "basePath": "api/v1",
+      "routesDir": "./src/routers/",
+      "authenticationModule": "./src/middlewares/authMiddleware.ts"
+    }
+  }
